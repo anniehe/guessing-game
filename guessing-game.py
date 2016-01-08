@@ -1,5 +1,6 @@
 from random import randint
 
+best_score = 100
 
 print "Hello, there! Welcome to the number guessing game!"
 
@@ -10,8 +11,6 @@ while True:
 
     print "%s, I'm thinking of a number between 1 and 100." % (name)
     print "Try to guess my number!"
-
-    # print random_number
 
     guess = 0
     guess_count = 0
@@ -26,7 +25,6 @@ while True:
                 print "Your guess was not between 1-100. Try again."
             else:
                 guess_count += 1
-                # print guess_count
                 if guess > random_number:
                     print "Your guess is too high, try again."
                 elif guess < random_number:
@@ -34,9 +32,14 @@ while True:
                 else:
                     print "Well done, %s! You found my number in %d tries!" % (name, guess_count)
 
+    if guess_count < best_score:
+        best_score = guess_count
+
     print "Do you want to play again?"
 
     play_again = raw_input("Enter 'Y' for YES or 'N' for NO: ")
     if play_again != "Y" and play_again != "y":
         print "Goodbye!"
         break
+
+print "Your best score was %d!" % (best_score)
