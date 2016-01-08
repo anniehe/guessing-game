@@ -30,3 +30,6 @@ while guess != random_number:
                 print "Your guess is too low, try again."
             else:
                 print "Well done, %s! You found my number in %d tries!" % (name, guess_count)
+
+print "Do you want to play again?"
+play_again = raw_input("Enter 'Y' for YES or 'N' for NO: ")
