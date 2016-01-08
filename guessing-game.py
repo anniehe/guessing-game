@@ -1,6 +1,7 @@
 from random import randint
 
 random_number = randint(1, 100)
+guess = 0
 
 print "Hello there! Welcome to the number guessing game!"
 
@@ -11,9 +12,9 @@ print "Try to guess my number!"
 
 # print random_number
 
-# choose random number between 1 and 100
-# while True:
-#     get guess
+while guess != random_number:
+    guess = int(raw_input("Your guess? "))
+
 #     if guess is incorrect:
 #         give hint
 #     else:
